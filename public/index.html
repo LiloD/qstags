@@ -5,9 +5,9 @@
         <link rel="stylesheet" type="text/css" href="css/qstags.css">
         <script type="text/javascript" src="/bower_components/angular/angular.min.js"></script>
     </head>
-    <body>
+    <body ng-app="main" ng-controller="tagsCtl">
         <h3>tags</h3>
-        <div ng-app="main" ng-controller="tagsCtl">
+        <div >
             <div>{{tags}}</div>
             <!-- <div class="tag-wrapper">
                 <a class="tag-value">Java</a><span class="glyphicon glyphicon-remove"></span>
@@ -23,6 +23,19 @@
                 <option ng-repeat="tag in tags">{{tag}}</option>
             </select>
         </div>
+        <hr><hr>
+
+        <hint info="info"></hint>
+
+        <!-- <div class="suggestion-wrapper">
+            <form>                
+                <input type="text" class="search-input" ng-model="q" ng-model-options="{ debounce: 1000 }" ng-change="suggestionSearch(q)">
+            </form>
+            <ul ng-show="!!q && suggestionList.length > 0" class="suggestion-list">
+                <li ng-repeat="ent in suggestionList">{{ent}}</li>
+            </ul>
+        </div> -->
+        <script type="text/javascript" src="javascripts/hint.js"></script>        
         <script type="text/javascript" src="javascripts/app.js"></script>
     </body>
 </html>

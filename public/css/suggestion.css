@@ -1,29 +1,4 @@
-body{
-    max-width:1000px;
-    margin:auto;
-}
-
-.tag-wrapper{
-	display: inline-block;
-	background-color: #e5f2ff;
-	padding: 5px 10px;
-	margin: 5px;
-}
-
-.tag-value{
-	cursor: pointer;
-	text-decoration: none;
-	margin-right: 5px;
-}
-
-.glyphicon, .glyphicon-remove{
-	top: 2px;
-	cursor: pointer;
-}
-
-
-/*for suggestion list*/
-.hint-wrapper{
+.suggestion-wrapper{
     position: relative;
     display: block;
 }
@@ -33,7 +8,7 @@ body{
     max-width: 300px; 
 }
 
-.hint-list{
+.suggestion-list{
     list-style-type: none;
     position: absolute;
     border: 1px solid #e5e9ef;
@@ -46,15 +21,12 @@ body{
     box-shadow: 0px 3px 3px #f2f2f2;
 }
 
-.hint-list li{
+.suggestion-list li{
     padding: 5px;
     cursor: pointer;
     border-radius: 4px;
 }
 
-.hint-list li:hover{
+.suggestion-list li:hover{
     background-color: #f2f2f2;
 }
-
-
-

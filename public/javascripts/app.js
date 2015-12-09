@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('main', []);
+    var app = angular.module('main', ['hint']);
 
     app.controller('tagsCtl', ['$http', '$scope', function($http, $scope){
         $scope.tags = ['c', 'c++', 'opengl', 'STL'];
@@ -14,6 +14,11 @@
             console.log(idx);
             $scope.selectedTags.splice(idx, 1);
         }
+
+        $scope.info = {
+            q: ""
+        }
+
     }]);
 
 })();
