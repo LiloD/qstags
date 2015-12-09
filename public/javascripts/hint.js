@@ -12,6 +12,13 @@
 
                     $scope.list = [];
 
+
+                    $scope.attach = function(idx){
+                        console.log("in attach", idx);
+                        $scope.info.q = $scope.list[idx];
+                        console.log("info q", $scope.info.q);
+                    }
+
                     $scope.search = function(q) {
                         console.log('input', q);
 
