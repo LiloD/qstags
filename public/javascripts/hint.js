@@ -8,8 +8,6 @@
                 },
                 templateUrl: 'hint.html',
                 controller: ['$scope', '$http', function($scope, $http) {
-                    defaultList = ['c', 'c++', 'opengl', 'STL', 'nodejs', 'expressjs', 'javascript', 'js'];
-
                     $scope.list = [];
 
                     $scope.selected = -1;
@@ -57,17 +55,8 @@
                         $scope.list = []; 
                     }
 
-                    $scope.search = function(q) {
-                        console.log('input', q);
-
-                        $scope.list = [];
-
-                        for (var i = 0; i < defaultList.length; ++i) {
-                            if (defaultList[i].indexOf(q) >= 0) {
-                                //if contained in default list
-                                $scope.list.push(defaultList[i]);
-                            }
-                        }
+                    $scope.search = function(query) {
+                        $scope.list = $scope.info.fetch(query);
                     }
                 }]
             }
