@@ -12,11 +12,35 @@
 
                     $scope.list = [];
 
+                    $scope.selected = -1;
 
                     $scope.attach = function(idx){
-                        console.log("in attach", idx);
                         $scope.info.q = $scope.list[idx];
-                        console.log("info q", $scope.info.q);
+                    }
+
+                    $scope.mouseover = function(idx){
+                        $scope.selected = idx;
+                    }
+
+                    $scope.keydown = function(e){
+                        if(e.keyCode == 38){
+                            e.preventDefault();
+                            if($scope.selected >= 0){
+                                $scope.selected--;
+                            }else{
+                                $scope.selected = $scope.list.length-1;
+                            }
+                            
+                        }else if(e.keyCode == 40){
+                            e.preventDefault();
+                            if($scope.selected < $scope.list.length){
+                                $scope.selected++;
+                            }else{  
+                                $scope.selected = 0;
+                            }
+                        }
+
+                        console.log($scope.selected);
                     }
 
                     $scope.search = function(q) {

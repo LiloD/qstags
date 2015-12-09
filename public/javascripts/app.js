@@ -15,9 +15,6 @@
             $scope.selectedTags.splice(idx, 1);
         }
 
-        $scope.attach = function(idx){
-            console.log("in attach", idx);
-        }
 
         $scope.info = {
             q: ""
