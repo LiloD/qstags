@@ -11,7 +11,8 @@
         }
 
         $scope.remove = function(idx){
-            $scope.selectedTags.slice(idx, 1);
+            console.log(idx);
+            $scope.selectedTags.splice(idx, 1);
         }
     }]);
 

@@ -1,0 +1,18 @@
+
+.tag-wrapper{
+	display: inline-block;
+	background-color: #e5f2ff;
+	padding: 5px 10px;
+	margin: 5px;
+}
+
+.tag-value{
+	cursor: pointer;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+.glyphicon, .glyphicon-remove{
+	top: 2px;
+	cursor: pointer;
+}
