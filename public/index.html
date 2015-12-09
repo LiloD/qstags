@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    </head>
+    <body>
+        <h3>tags</h3>
+        <div ng-app="main" ng-controller="tagsCtl">
+            <div>{{tags}}</div>
+            <!-- <div>{{selectedTags}}</div> -->
+
+            <div>
+                <div ng-repeat="tag in selectedTags" style="display:inline-block;">
+                    <span>{{tag}}</span>
+                </div>
+            </div>
+
+            <select ng-model="selectedTag" ng-change="appendTo(selectedTag)">
+                <option ng-repeat="tag in tags">{{tag}}</option>
+            </select>
+        </div>
+        <script type="text/javascript" src="javascripts/app.js"></script>
+    </body>
+</html>
