@@ -8,39 +8,53 @@
                 },
                 templateUrl: 'hint.html',
                 controller: ['$scope', '$http', function($scope, $http) {
-                    defaultList = ['c', 'c++', 'opengl', 'STL'];
+                    defaultList = ['c', 'c++', 'opengl', 'STL', 'nodejs', 'expressjs', 'javascript', 'js'];
 
                     $scope.list = [];
 
                     $scope.selected = -1;
 
-                    $scope.attach = function(idx){
+                    $scope.attach = function(idx) {
                         $scope.info.q = $scope.list[idx];
                     }
 
-                    $scope.mouseover = function(idx){
+                    $scope.mouseover = function(idx) {
                         $scope.selected = idx;
+                        $scope.attach($scope.selected);
                     }
 
-                    $scope.keydown = function(e){
-                        if(e.keyCode == 38){
-                            e.preventDefault();
-                            if($scope.selected >= 0){
-                                $scope.selected--;
-                            }else{
-                                $scope.selected = $scope.list.length-1;
-                            }
-                            
-                        }else if(e.keyCode == 40){
-                            e.preventDefault();
-                            if($scope.selected < $scope.list.length){
-                                $scope.selected++;
-                            }else{  
-                                $scope.selected = 0;
-                            }
-                        }
+                    $scope.keydown = function(e) {
+                        switch (e.keyCode) {
+                            case 38:
+                                e.preventDefault();
 
-                        console.log($scope.selected);
+                                if ($scope.selected >= 0) {
+                                    $scope.selected--;
+                                } else {
+                                    $scope.selected = $scope.list.length - 1;
+                                }
+                                $scope.attach($scope.selected);
+                                break;
+                            case 40:
+                                e.preventDefault();
+                                
+                                if ($scope.selected < $scope.list.length) {
+                                    $scope.selected++;
+                                } else {
+                                    $scope.selected = 0;
+                                }
+                                
+                                $scope.attach($scope.selected);
+                                break;
+                            case 13:
+                                $scope.list = [];
+                                break;
+                        }
+                    }
+
+                    $scope.click = function(idx){
+                        $scope.attach(idx);
+                        $scope.list = []; 
                     }
 
                     $scope.search = function(q) {
